@@ -1,0 +1,69 @@
+button {
+    outline-color: white;
+    background-color: black;
+
+    width: 100px;
+}
+
+.displayText {
+    font: 20px Arial;
+    color: white;
+}
+
+.middleObj {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#heardPitch {
+    font-size: 20px;
+}
+
+#page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+
+    background: white;
+}
+
+#pad {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: black;
+
+    overflow-y: auto;
+}
+
+#comment {
+    display: none;
+}
+
+#score {
+    font-size: 60px;
+}
+
+#detailLink {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#acceptedAns {
+    max-height: 200px;
+    width: 19ch;
+    overflow-y: auto;
+}

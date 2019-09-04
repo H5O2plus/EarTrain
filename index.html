@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ear Trainer</title>
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="page"> <!--prevents scrolling on mobile-->
+        <div id="pad">
+            <div class="displayText" id="scoreLabel">Score:</div>
+            <div class="displayText" id="score">0 / 0</div>
+            <button class="displayText" id="replay">Replay</button>
+            <div class="displayText middleObj" id="comment"></div>
+            <input class="middleObj" type="text" name="guess" value="" id="heardPitch" />
+            <button class="displayText" id="next">Next</button>
+            <div class="displayText" id="detailLink">[show accepted answers]</div>
+            <p class="displayText" id="acceptedAns"></p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.3.11/Tone.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
