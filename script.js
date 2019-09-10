@@ -35,7 +35,7 @@ var answers = [
 var answersHtml;
 var quesTotal = 0;
 var quesCorrect = 0;
-var mode = "question";  //question, answer
+var mode = "begin";  //question, answer
 var isShowingAccAns = false;
 var curPitchIndex = 42;
 var curAnswers = answers[18];
@@ -97,12 +97,33 @@ $("#page").on("touchstart touchend touchmove", event => {
 */
 
 $("#replay").on("click", function() {
-    synth.triggerAttackRelease(pitches[curPitchIndex], 1);
+    Tone.context.resume();
+    synth.triggerAttackRelease(pitches[curPitchIndex], 1, '+0.05');
 });
-$("#replay").trigger("click");
+//Doesn't work; needs user interaction first
+//$("#replay").trigger("click");
 
+$("#score").hide();
+$("#begin").show();
+$("#replay").hide();
 $("#comment").hide();
-$("#heardPitch").show();
+$("#heardPitch").hide();
+$("#next").hide();
+$("#acceptedAns").hide();
+$("#acceptedAns").html(answersHtml);
+
+$("#begin").on("click", function() {
+    if (mode === "begin") {
+        $("#scoreLabel").html("Score:");
+        $("#score").show();
+        $("#begin").hide();
+        $("#replay").show();
+        $("#heardPitch").show();
+        $("#next").show();
+
+        mode = "question";
+    }
+});
 
 $("#next").on("click", function () {
     if (mode === "question") {
@@ -134,11 +155,11 @@ $("#next").on("click", function () {
 
 $("#detailLink").on("click", function() {
     if (isShowingAccAns) {
-        $("#detailLink").html("[show accepted answers]");
-        $("#acceptedAns").html("");
+        $("#detailLink").html("(show accepted answers)");
+        $("#acceptedAns").hide();
     } else {
-        $("#detailLink").html("[hide accepted answers]");
-        $("#acceptedAns").html(answersHtml);
+        $("#detailLink").html("(hide accepted answers)");
+        $("#acceptedAns").show();
     }
     isShowingAccAns = !isShowingAccAns;
 });

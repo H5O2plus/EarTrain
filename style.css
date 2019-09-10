@@ -10,12 +10,17 @@ button {
     color: white;
 }
 
+a {
+    color: white;
+}
+
 .middleObj {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 #heardPitch {
+    display: none;
     font-size: 20px;
 }
 
@@ -50,8 +55,26 @@ button {
     display: none;
 }
 
+#replay {
+    display: none;
+}
+
+#scoreLabel {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    max-width: 300px;
+    text-align: center;
+}
+
 #score {
+    display: none;
+
     font-size: 60px;
+}
+
+#next {
+    display: none;
 }
 
 #detailLink {
@@ -63,7 +86,11 @@ button {
 }
 
 #acceptedAns {
-    max-height: 200px;
+    display: none;
+
+    max-height: 190px;
     width: 19ch;
     overflow-y: auto;
+
+    border: solid white;
 }
