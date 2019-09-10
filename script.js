@@ -121,6 +121,8 @@ $("#begin").on("click", function() {
         $("#heardPitch").show();
         $("#next").show();
 
+        $("#replay").trigger("click");
+
         mode = "question";
     }
 });
@@ -151,6 +153,8 @@ $("#next").on("click", function () {
     $("#heardPitch").toggle();
 
     $("#score").html(quesCorrect + " / " + quesTotal);
+    
+    $("#heardPitch").focus();
 });
 
 $("#detailLink").on("click", function() {
